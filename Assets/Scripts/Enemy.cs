@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour{
 
-    [SerializeField] protected Vector3[] walkTargets;
+    [SerializeField] protected Vector3[] moveTargets;
 
     [SerializeField] protected float speed;
 
@@ -13,15 +13,15 @@ public abstract class Enemy : MonoBehaviour{
 
     protected virtual void FixedUpdate(){
 
-        if(transform.position == walkTargets[currentTargetIndex]){
+        if(transform.position == moveTargets[currentTargetIndex]){
 
             TargetReached();
 
-            currentTargetIndex = (currentTargetIndex + 1) % walkTargets.Length;
+            currentTargetIndex = (currentTargetIndex + 1) % moveTargets.Length;
 
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, walkTargets[currentTargetIndex], speed);
+        transform.position = Vector3.MoveTowards(transform.position, moveTargets[currentTargetIndex], speed);
 
     }
 
