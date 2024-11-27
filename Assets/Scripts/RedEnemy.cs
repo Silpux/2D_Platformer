@@ -7,6 +7,8 @@ public class RedEnemy : EnemyDamagable{
 
     protected override void Start(){
 
+        base.Start();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
     }

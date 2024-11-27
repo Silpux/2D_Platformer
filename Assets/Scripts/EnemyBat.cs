@@ -6,6 +6,8 @@ public class EnemyBat : EnemyDamagable{
 
     protected override void Start(){
 
+        base.Start();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
     }

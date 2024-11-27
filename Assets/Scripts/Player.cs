@@ -35,6 +35,7 @@ public class Player : MonoBehaviour{
     private Animator animator;
 
     private GroundedZone groundedZone;
+    private BulletShooter bulletShooter;
 
     private void Start(){
 
@@ -43,6 +44,11 @@ public class Player : MonoBehaviour{
         spawnPosition = transform.position;
         groundedZone = GetComponentInChildren<GroundedZone>();
         animator = GetComponent<Animator>();
+        bulletShooter = GetComponent<BulletShooter>();
+
+        if(bulletShooter is null){
+            throw new NullReferenceException("Bullet shooter is null");
+        }
 
         if(groundedZone is null){
             throw new NullReferenceException("Grounded zone is null");
@@ -93,6 +99,13 @@ public class Player : MonoBehaviour{
 
         if(Input.GetKey(KeyCode.Space) && isGrounded){
             rb2d.linearVelocity = new Vector2(0, jumpForce);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q)){
+            bulletShooter.Shoot(toRight: false);
+        }
+        else if(Input.GetKeyDown(KeyCode.E)){
+            bulletShooter.Shoot(toRight: true);
         }
 
     }

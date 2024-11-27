@@ -9,6 +9,8 @@ public class BlueEnemy : EnemyDamagable{
 
     protected override void Start(){
 
+        base.Start();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         killZone = GetComponentInChildren<EnemyKillZone>();
 

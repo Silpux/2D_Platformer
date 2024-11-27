@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public abstract class EnemyDamagable : Enemy{
+public abstract class EnemyDamagable : Enemy, IDamagable{
 
     protected Animator animator;
     [SerializeField] protected int health;
@@ -14,7 +14,7 @@ public abstract class EnemyDamagable : Enemy{
 
     }
 
-    protected void TakeDamage(int amount){
+    public void TakeDamage(int amount){
 
         health -= amount;
 
