@@ -14,7 +14,7 @@ public class Player : MonoBehaviour{
     [SerializeField] private float walkSpeed = 0.1f;
     [SerializeField] private float swimSpeed = 0.05f;
     [SerializeField] private float waterGravity = 5f;
-    [SerializeField] private float runSpeed = 0.2f;
+    [SerializeField] private float runSpeed = 0.15f;
     [SerializeField] private float sneakSpeed = 0.05f;
     [SerializeField] private float swimForce = 1000f;
     [SerializeField] private float jumpForceGround = 8f;
@@ -32,6 +32,8 @@ public class Player : MonoBehaviour{
     private Rigidbody2D rb2d;
     private MoveMode moveMode;
 
+    private Animator animator;
+
     private GroundedZone groundedZone;
 
     private void Start(){
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour{
         rb2d = GetComponent<Rigidbody2D>();
         spawnPosition = transform.position;
         groundedZone = GetComponent<GroundedZone>();
+        animator = GetComponent<Animator>();
 
         if(groundedZone is null){
             throw new NullReferenceException("Grounded zone is null");
@@ -53,9 +56,13 @@ public class Player : MonoBehaviour{
 
         if(Input.GetAxis("Horizontal") != 0){
             spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
+            animator.Play(Input.GetKey(KeyCode.LeftShift) ? "Sneak" : "Walk");
+        }
+        else{
+            animator.Play("Idle");
         }
 
-        if(rb2d.linearVelocity.y < 0 && (moveMode == MoveMode.Walk)){
+        if(rb2d.linearVelocity.y < 0 && moveMode == MoveMode.Walk){
             rb2d.AddForce(-transform.up * additionalGravity * Time.deltaTime);
         }
 
@@ -147,7 +154,7 @@ public class Player : MonoBehaviour{
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other){
 
         if(other.gameObject.CompareTag("Deadly")){
             Death();
