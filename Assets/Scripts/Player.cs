@@ -41,7 +41,7 @@ public class Player : MonoBehaviour{
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         spawnPosition = transform.position;
-        groundedZone = GetComponent<GroundedZone>();
+        groundedZone = GetComponentInChildren<GroundedZone>();
         animator = GetComponent<Animator>();
 
         if(groundedZone is null){
@@ -96,6 +96,11 @@ public class Player : MonoBehaviour{
         }
 
     }
+
+    public void EnemyKillJump(){
+        rb2d.linearVelocity = new Vector2(0, jumpForce / 2);
+    }
+
     private void FixedUpdate(){
 
         if(moveMode == MoveMode.Swim)

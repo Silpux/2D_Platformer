@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 988050625742406872}
   - component: {fileID: 8531162656825040899}
   - component: {fileID: 4484998995043874185}
-  - component: {fileID: 2134589812834820072}
   - component: {fileID: 6815581920902076227}
   m_Layer: 0
   m_Name: Player
@@ -180,18 +179,6 @@ MonoBehaviour:
   jumpForce: 8
   speedOnLadder: 4
   additionalGravity: 2400
---- !u!114 &2134589812834820072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430922486445623441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728991f2a95d65344aaac487cfc38940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &6815581920902076227
 Animator:
   serializedVersion: 7
