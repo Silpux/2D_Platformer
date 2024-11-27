@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour{
@@ -25,5 +26,11 @@ public abstract class Enemy : MonoBehaviour{
     }
 
     protected abstract void TargetReached();
+
+    private void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.TryGetComponent<Player>(out Player player)){
+            player.Death();
+        }
+    }
 
 }
