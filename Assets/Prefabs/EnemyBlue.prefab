@@ -263,5 +263,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTargets: []
-  speed: 0.02
+  speed: 0.04
   health: 300
