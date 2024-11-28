@@ -39,6 +39,8 @@ public class Player : MonoBehaviour{
 
     private GroundedZone groundedZone;
     private BulletShooter bulletShooter;
+    private BulletStorage bulletStorage;
+    private BulletsUI bulletsUI;
 
     private void Start(){
 
@@ -48,16 +50,28 @@ public class Player : MonoBehaviour{
         groundedZone = GetComponentInChildren<GroundedZone>();
         animator = GetComponent<Animator>();
         bulletShooter = GetComponent<BulletShooter>();
-
-        if(bulletShooter is null){
-            throw new NullReferenceException("Bullet shooter is null");
-        }
+        bulletStorage = GetComponent<BulletStorage>();
+        bulletsUI = GetComponent<BulletsUI>();
 
         if(groundedZone is null){
             throw new NullReferenceException("Grounded zone is null");
         }
 
         groundedZone.OnGroundStateChanged += SetGrounded;
+
+        if(bulletShooter is null){
+            throw new NullReferenceException("Bullet shooter is null");
+        }
+
+        if(bulletStorage is null){
+            throw new NullReferenceException("Bullet storage is null");
+        }
+        
+        if(bulletsUI is null){
+            throw new NullReferenceException("BulletsUI is null");
+        }
+
+        bulletStorage.OnBulletCountChanged += bulletsUI.UpdateBulletsCount;
 
     }
 
@@ -105,10 +119,18 @@ public class Player : MonoBehaviour{
         }
 
         if(Input.GetKeyDown(KeyCode.Q)){
-            bulletShooter.Shoot(shootPointLeft.position, new Vector2(-1f, 0.2f));
+
+            if(bulletStorage.ConsumeBullet()){
+                bulletShooter.Shoot(shootPointLeft.position, new Vector2(-1f, 0.2f));
+            }
+
         }
         else if(Input.GetKeyDown(KeyCode.E)){
-            bulletShooter.Shoot(shootPointRight.position, new Vector2(1f, 0.2f));
+
+            if(bulletStorage.ConsumeBullet()){
+                bulletShooter.Shoot(shootPointRight.position, new Vector2(1f, 0.2f));
+            }
+
         }
 
     }
