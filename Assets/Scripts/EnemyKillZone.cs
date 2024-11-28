@@ -6,13 +6,12 @@ public class EnemyKillZone : MonoBehaviour{
 
     public event Action OnTriggered = delegate{ };
 
-    private void OnTriggerEnter2D(Collider2D other){
+    private void OnCollisionEnter2D(Collision2D other) {
 
-        if(other.TryGetComponent<Player>(out Player player)){
+        if(other.gameObject.TryGetComponent<Player>(out Player player)){
             OnTriggered?.Invoke();
             player.EnemyKillJump();
         }
-
     }
 
 }
