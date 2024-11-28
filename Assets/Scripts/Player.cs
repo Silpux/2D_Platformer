@@ -135,6 +135,10 @@ public class Player : MonoBehaviour{
 
     }
 
+    public void SetSpawnPosition(Vector2 position){
+        spawnPosition = position;
+    }
+
     public void EnemyKillJump(){
         rb2d.linearVelocity = new Vector2(0, jumpForce / 2);
     }
