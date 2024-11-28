@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4479101443322623060, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.5
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4479101443322623060, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: moveTargets.Array.data[0].y
-      value: 19.5
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: moveTargets.Array.data[1].x
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: moveTargets.Array.data[1].y
-      value: 19.5
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: walkTargets.Array.data[0].x
@@ -46230,7 +46230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4479101443322623060, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4479101443322623060, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46278,7 +46278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: moveTargets.Array.data[0].y
-      value: 8.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: moveTargets.Array.data[1].x
@@ -46286,7 +46286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: moveTargets.Array.data[1].y
-      value: 8.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6986303282687549066, guid: 0630de76b282f214782fbf4db991b0da, type: 3}
       propertyPath: walkTargets.Array.data[0].x
