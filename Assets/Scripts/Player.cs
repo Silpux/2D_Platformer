@@ -22,6 +22,9 @@ public class Player : MonoBehaviour{
     [SerializeField] private float speedOnLadder = 4f;
     [SerializeField] private float additionalGravity = 2400f;
 
+    [SerializeField] private Transform shootPointRight;
+    [SerializeField] private Transform shootPointLeft;
+
     private float speed;
 
     private bool isGrounded;
@@ -102,10 +105,10 @@ public class Player : MonoBehaviour{
         }
 
         if(Input.GetKeyDown(KeyCode.Q)){
-            bulletShooter.Shoot(toRight: false);
+            bulletShooter.Shoot(shootPointLeft.position, new Vector2(-1f, 0.2f));
         }
         else if(Input.GetKeyDown(KeyCode.E)){
-            bulletShooter.Shoot(toRight: true);
+            bulletShooter.Shoot(shootPointRight.position, new Vector2(1f, 0.2f));
         }
 
     }

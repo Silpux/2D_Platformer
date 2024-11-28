@@ -182,6 +182,8 @@ MonoBehaviour:
   jumpForce: 8
   speedOnLadder: 4
   additionalGravity: 2400
+  shootPointRight: {fileID: 5225130988246132518}
+  shootPointLeft: {fileID: 7546558031432035547}
 --- !u!95 &6815581920902076227
 Animator:
   serializedVersion: 7
@@ -218,9 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1138750126712882553, guid: b5e4e8c8cb2180d428dd04e0c653262f, type: 3}
   bulletSpeed: 20
-  bulletVerticalImpulse: 3
-  shootPointRight: {fileID: 5225130988246132518}
-  shootPointLeft: {fileID: 7546558031432035547}
 --- !u!1 &1372411299253452275
 GameObject:
   m_ObjectHideFlags: 0
