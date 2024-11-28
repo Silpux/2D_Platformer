@@ -1,14 +1,6 @@
 using System;
 using UnityEngine;
 
-public enum MoveMode{
-
-    Walk,
-    Swim,
-    OnLadder
-
-}
-
 public class Player : MonoBehaviour{
 
     [SerializeField] private float walkSpeed = 0.1f;
@@ -42,7 +34,15 @@ public class Player : MonoBehaviour{
     private BulletStorage bulletStorage;
     private BulletsUI bulletsUI;
 
-    private void Start(){
+    private enum MoveMode{
+
+        Walk,
+        Swim,
+        OnLadder
+
+    }
+
+    private void Awake(){
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();

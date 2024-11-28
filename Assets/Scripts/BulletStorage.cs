@@ -18,6 +18,13 @@ public class BulletStorage : MonoBehaviour{
 
     }
 
+    public void AddBullets(int amount){
+
+        bulletCount += amount;
+        OnBulletCountChanged?.Invoke(bulletCount);
+
+    }
+
     public bool ConsumeBullet(){
 
         if(bulletCount > 0){
