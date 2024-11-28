@@ -121,14 +121,14 @@ public class Player : MonoBehaviour{
         if(Input.GetKeyDown(KeyCode.Q)){
 
             if(bulletStorage.ConsumeBullet()){
-                bulletShooter.Shoot(shootPointLeft.position, new Vector2(-1f, 0.2f));
+                bulletShooter.Shoot(shootPointLeft.position, new Vector2(-1f, 0.1f));
             }
 
         }
         else if(Input.GetKeyDown(KeyCode.E)){
 
             if(bulletStorage.ConsumeBullet()){
-                bulletShooter.Shoot(shootPointRight.position, new Vector2(1f, 0.2f));
+                bulletShooter.Shoot(shootPointRight.position, new Vector2(1f, 0.1f));
             }
 
         }
