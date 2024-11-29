@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3443fa2d97c3ba446a5241fd86ed8049, type: 3}
   m_Name: LevelsMainMenu
   m_EditorClassIdentifier: 
-  levels: []
+  levels:
+  - name: Level 1
+    scene: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+  - name: Level 2
+    scene: {fileID: 102900000, guid: 6a8cd294fc510f742abe3f0164102d97, type: 3}
+  - name: Level 3
+    scene: {fileID: 102900000, guid: 2b3b3317133dfe34d853b40e788b1974, type: 3}

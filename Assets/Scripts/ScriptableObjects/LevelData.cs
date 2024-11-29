@@ -14,6 +14,10 @@ public class LevelData : ScriptableObject{
 public class LevelInfo{
 
     [SerializeField] private string name;
+    public string Name => name;
+
     [SerializeField] private SceneAsset scene;
+    public SceneAsset Scene => scene;
+
 
 }
