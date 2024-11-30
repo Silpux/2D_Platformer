@@ -1,7 +1,7 @@
-using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "LevelData", menuName = "Game/Level Data")]
 public class LevelData : ScriptableObject{
@@ -19,5 +19,7 @@ public class LevelInfo{
     [SerializeField] private SceneAsset scene;
     public SceneAsset Scene => scene;
 
+    [HideInInspector]
+    public string scenePath;
 
 }

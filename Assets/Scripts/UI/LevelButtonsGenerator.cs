@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelButtonsGenerator : MonoBehaviour{
 
@@ -18,6 +17,7 @@ public class LevelButtonsGenerator : MonoBehaviour{
             if(button.TryGetComponent<LevelButton>(out LevelButton levelButton)){
 
                 levelButton.SetLevelName(level.Name);
+                levelButton.SetOpenScene(level.scenePath);
 
             }
             else{
