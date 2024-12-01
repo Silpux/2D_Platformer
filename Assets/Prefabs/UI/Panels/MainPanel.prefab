@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsPanelPrefab: {fileID: 6664509706354876506, guid: c6a4e2589545416499146c486038dc8f, type: 3}
+  exitPanelPrefab: {fileID: -7729702230948509528, guid: 5e546d9289b651c4bb18d29fdd7dec78, type: 3}
 --- !u!1 &1403629589479039258
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,4 +972,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3957802111195580919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1359789422987582341}
+        m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
+        m_MethodName: OpenExitPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

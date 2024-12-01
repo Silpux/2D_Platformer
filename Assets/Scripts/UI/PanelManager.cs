@@ -6,6 +6,8 @@ public class PanelManager : Singleton<PanelManager>{
     private List<Panel> openPanels = new List<Panel>();
     private Dictionary<Panel, Panel> cachedPanels = new Dictionary<Panel, Panel>();
 
+    [SerializeField] private Panel initialPanel;
+
     private void Update(){
 
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -49,7 +51,7 @@ public class PanelManager : Singleton<PanelManager>{
 
         }
         else{
-
+            initialPanel.Close();
         }
 
     }
