@@ -8,6 +8,10 @@ public abstract class Panel : MonoBehaviour{
         PreviousPanel = panel;
     }
 
+    public void OpenPanel(Panel prefab, Panel previousPanel = null){
+        PanelManager.Instance.OpenPanel(prefab, CommonParent, previousPanel);
+    }
+
     protected Transform CommonParent => PreviousPanel?.CommonParent ?? transform.parent;
 
     public abstract bool Close();

@@ -4,10 +4,11 @@ using UnityEngine;
 public class PanelManager : Singleton<PanelManager>{
 
     private List<Panel> openPanels = new List<Panel>();
+    private Dictionary<Panel, Panel> cachedPanels = new Dictionary<Panel, Panel>();
 
     private void Update(){
 
-        if(Input.GetKey(KeyCode.Escape)){
+        if(Input.GetKeyDown(KeyCode.Escape)){
             CloseLast();
         }
 
@@ -15,7 +16,15 @@ public class PanelManager : Singleton<PanelManager>{
 
     public Panel OpenPanel(Panel panel, Transform parent, Panel previousPanel = null){
 
-        Panel newPanel = Instantiate(panel, parent);
+        Panel newPanel;
+
+        if(cachedPanels.TryGetValue(panel, out newPanel)){
+            newPanel.gameObject.SetActive(true);
+        }
+        else{
+            newPanel = Instantiate(panel, parent);
+            cachedPanels[panel] = newPanel;
+        }
 
         if(previousPanel is not null){
             newPanel.SetPreviousPanel(previousPanel);
