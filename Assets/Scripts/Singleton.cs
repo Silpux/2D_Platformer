@@ -7,12 +7,12 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>{
 
     public void Awake(){
 
-        if(Instance is null){
+        if(Instance == null){
 
             Instance = this as T;
 
             if(Instance is null){
-                throw new InvalidOperationException("ccc");
+                throw new InvalidOperationException($"{nameof(T)} is null");
             }
 
             return;
