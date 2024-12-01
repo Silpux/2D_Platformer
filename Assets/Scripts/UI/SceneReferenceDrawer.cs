@@ -11,23 +11,9 @@ public class SceneReferenceDrawer : PropertyDrawer{
 
         EditorGUI.BeginProperty(position, label, property);
 
-        var sceneNameProp = property.FindPropertyRelative("name");
-
-        if(sceneNameProp is null){
-            throw new NullReferenceException("Scene name property is null");
-        }
-
-        var sceneAssetProp = property.FindPropertyRelative("scene");
-
-        if(sceneAssetProp is null){
-            throw new NullReferenceException("Scene asset property is null");
-        }
-
-        var scenePathProp = property.FindPropertyRelative("scenePath");
-
-        if(scenePathProp is null){
-            throw new NullReferenceException("Scene path property is null");
-        }
+        var sceneNameProp = property.FindPropertyRelative("name") ?? throw new NullReferenceException("Scene name property is null");
+        var sceneAssetProp = property.FindPropertyRelative("scene") ?? throw new NullReferenceException("Scene asset property is null");
+        var scenePathProp = property.FindPropertyRelative("scenePath") ?? throw new NullReferenceException("Scene path property is null");
 
         Rect assetFieldRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
         Rect nameFieldRect = new Rect(position.x, position.y + EditorGUIUtility.singleLineHeight + 2, position.width, EditorGUIUtility.singleLineHeight);
