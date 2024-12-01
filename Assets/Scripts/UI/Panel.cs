@@ -9,14 +9,12 @@ public abstract class Panel : MonoBehaviour{
     }
 
     public void OpenPanel(Panel prefab, Panel previousPanel = null){
-        PanelManager.Instance.OpenPanel(prefab, CommonParent, previousPanel);
+        PanelManager.Instance.OpenPanel(prefab, transform.parent, previousPanel);
     }
 
     public virtual void ButtonClose(){
         PanelManager.Instance.ClosePanel(this);
     }
-
-    protected Transform CommonParent => PreviousPanel?.CommonParent ?? transform.parent;
 
     public virtual bool Close(){
 

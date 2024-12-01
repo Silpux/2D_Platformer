@@ -7,6 +7,13 @@ public class PanelManager : Singleton<PanelManager>{
     private Dictionary<Panel, Panel> cachedPanels = new Dictionary<Panel, Panel>();
 
     [SerializeField] private Panel initialPanel;
+    [SerializeField] private Transform parent;
+
+    private void Start(){
+
+        initialPanel = Instantiate(initialPanel, parent);
+
+    }
 
     private void Update(){
 
