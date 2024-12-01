@@ -2,27 +2,12 @@ using System.Security;
 using TMPro;
 using UnityEngine;
 
-public class DiamondManager : MonoBehaviour{
-
-    public static DiamondManager Instance;
+public class DiamondManager : Singleton<DiamondManager>{
 
     [SerializeField] private TMP_Text diamondText;
 
     private int totalDiamonds;
     private int collectedDiamonds;
-
-    private void Awake(){
-
-        if(Instance is null){
-
-            Instance = this;
-            return;
-
-        }
-
-        Destroy(gameObject);
-
-    }
 
     public void RegisterDiamond(Diamond diamond){
 
