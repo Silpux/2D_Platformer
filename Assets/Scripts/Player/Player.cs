@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour{
 
@@ -76,6 +77,10 @@ public class Player : MonoBehaviour{
     }
 
     private void Update(){
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            SceneManager.LoadScene(0);
+        }
 
         if(Input.GetAxis("Horizontal") != 0){
             spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
