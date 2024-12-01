@@ -1,8 +1,16 @@
 using UnityEngine;
 
 public class LevelsPanel : Panel{
-    public override void Close(){
+
+    public override bool Close(){
+
         gameObject.SetActive(false);
-        previousPanel.gameObject.SetActive(true);
+        PreviousPanel.gameObject.SetActive(true);
+        return true;
+
+    }
+
+    public void ButtonClose(){
+        PanelManager.Instance.ClosePanel(this);
     }
 }

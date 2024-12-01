@@ -2,14 +2,14 @@ using UnityEngine;
 
 public abstract class Panel : MonoBehaviour{
 
-    protected Panel previousPanel;
+    public Panel PreviousPanel{get; protected set;}
 
     public virtual void SetPreviousPanel(Panel panel){
-        previousPanel = panel;
+        PreviousPanel = panel;
     }
 
-    protected Transform CommonParent => previousPanel?.CommonParent ?? transform.parent;
+    protected Transform CommonParent => PreviousPanel?.CommonParent ?? transform.parent;
 
-    public abstract void Close();
+    public abstract bool Close();
 
 }

@@ -4,12 +4,11 @@ using UnityEngine;
 public class MainPanel : Panel{
 
     [SerializeField] private Panel levelsPanelPrefab;
-    private GameObject levelsPanel;
 
     public void OpenLevelsPanel(){
 
-        Panel levelsPanel = Instantiate(levelsPanelPrefab, CommonParent);
-        levelsPanel.SetPreviousPanel(this);
+        PanelManager.Instance.OpenPanel(levelsPanelPrefab, CommonParent, this);
+        gameObject.SetActive(false);
 
     }
 
@@ -17,7 +16,7 @@ public class MainPanel : Panel{
         throw new InvalidOperationException("Main panel cannot have previous panel");
     }
 
-    public override void Close(){
+    public override bool Close(){
         throw new InvalidOperationException("Cannot close main panel");
     }
 

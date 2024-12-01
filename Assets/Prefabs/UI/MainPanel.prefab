@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b3fc90b3d7ade459eec4c0762b2f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsPanelPrefab: {fileID: 7271997616046862902, guid: 01f14b6da65cea54f887bc61970bcd14, type: 3}
+  levelsPanelPrefab: {fileID: 8119546788433888636, guid: 3d8f54f77a60eed4d9103c5fe5b155c6, type: 3}
 --- !u!1 &1403629589479039258
 GameObject:
   m_ObjectHideFlags: 0

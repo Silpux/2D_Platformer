@@ -454,10 +454,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 1359789422987582341, guid: 0cb21fa9cd8a583409dcf01d0824eab0, type: 3}
-      propertyPath: levelsPanelPrefab
-      value: 
-      objectReference: {fileID: 8119546788433888636, guid: 3d8f54f77a60eed4d9103c5fe5b155c6, type: 3}
     - target: {fileID: 8419396200767273109, guid: 0cb21fa9cd8a583409dcf01d0824eab0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
