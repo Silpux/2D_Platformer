@@ -27,7 +27,7 @@ public class PanelManager : Singleton<PanelManager>{
 
         Panel newPanel;
 
-        if(cachedPanels.TryGetValue(panel, out newPanel)){
+        if(cachedPanels.TryGetValue(panel, out newPanel) && newPanel != null){
 
             if(createNew){
                 Destroy(newPanel.gameObject);
