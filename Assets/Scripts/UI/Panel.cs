@@ -8,8 +8,8 @@ public abstract class Panel : MonoBehaviour{
         PreviousPanel = panel;
     }
 
-    public void OpenPanel(Panel prefab, Panel previousPanel = null){
-        PanelManager.Instance.OpenPanel(prefab, transform.parent, previousPanel);
+    public void OpenPanel(Panel prefab, Panel previousPanel = null, bool createNew = false){
+        PanelManager.Instance.OpenPanel(prefab, transform.parent, previousPanel, createNew);
     }
 
     public virtual void ButtonClose(){

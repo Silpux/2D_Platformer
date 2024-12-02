@@ -23,21 +23,26 @@ public class PanelManager : Singleton<PanelManager>{
 
     }
 
-    public Panel OpenPanel(Panel panel, Transform parent, Panel previousPanel = null){
+    public Panel OpenPanel(Panel panel, Transform parent, Panel previousPanel, bool createNew){
 
         Panel newPanel;
 
         if(cachedPanels.TryGetValue(panel, out newPanel)){
-            newPanel.gameObject.SetActive(true);
+
+            if(createNew){
+                Destroy(newPanel.gameObject);
+                cachedPanels[panel] = newPanel = Instantiate(panel, parent);
+            }
+            else{
+                newPanel.gameObject.SetActive(true);
+            }
+
         }
         else{
-            newPanel = Instantiate(panel, parent);
-            cachedPanels[panel] = newPanel;
+            cachedPanels[panel] = newPanel = Instantiate(panel, parent);
         }
 
-        if(previousPanel is not null){
-            newPanel.SetPreviousPanel(previousPanel);
-        }
+        newPanel.SetPreviousPanel(previousPanel);
 
         openPanels.Add(newPanel);
         return newPanel;

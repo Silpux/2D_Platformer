@@ -8,7 +8,7 @@ public class MainPanel : Panel{
 
     public void OpenLevelsPanel(){
 
-        OpenPanel(levelsPanelPrefab, this);
+        OpenPanel(levelsPanelPrefab, this, true);
         gameObject.SetActive(false);
 
     }
