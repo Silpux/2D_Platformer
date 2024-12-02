@@ -5,16 +5,20 @@ public class MainPanel : Panel{
 
     [SerializeField] private Panel levelsPanelPrefab;
     [SerializeField] private Panel exitPanelPrefab;
+    [SerializeField] private Panel settingsPanelPrefab;
 
     public void OpenLevelsPanel(){
-
-        OpenPanel(levelsPanelPrefab, this, true);
+        OpenPanel(levelsPanelPrefab, this);
         gameObject.SetActive(false);
-
     }
 
     public void OpenExitPanel(){
         OpenPanel(exitPanelPrefab, this);
+        gameObject.SetActive(false);
+    }
+
+    public void OpenSettingsPanel(){
+        OpenPanel(settingsPanelPrefab, this);
         gameObject.SetActive(false);
     }
 
