@@ -1,29 +1,47 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsPanel : Panel{
 
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixerSettingsSO musicSettings;
+    [SerializeField] private AudioMixerSettingsSO sfxSettings;
 
-    private const string MusicGroupParam = "MusicGroup";
-    private const string MusicParam = "MusicVolume";
-    private const string SFXGroupParam = "SFXGroup";
-    private const string SFXParam = "SFXVolume";
+    [SerializeField] private Toggle musicToggle;
+    [SerializeField] private Slider musicSlider;
+
+    [SerializeField] private Toggle sfxToggle;
+    [SerializeField] private Slider sfxSlider;
+
+    private void Start(){
+
+        musicToggle.isOn = 0 != PlayerPrefs.GetInt(musicSettings.PlayerPrefsEnabledString);
+        sfxToggle.isOn = 0 != PlayerPrefs.GetInt(sfxSettings.PlayerPrefsEnabledString);
+
+        musicSlider.value = PlayerPrefs.GetFloat(musicSettings.PlayerPrefsValueString);
+        sfxSlider.value = PlayerPrefs.GetFloat(sfxSettings.PlayerPrefsValueString);
+
+    }
 
     public void SetMusicValue(float value){
-        audioMixer.SetFloat(MusicParam, Mathf.Log10(value) * 20);
+        musicSettings.SetValue(value);
+        PlayerPrefs.SetFloat(musicSettings.PlayerPrefsValueString, value);
     }
 
     public void ToggleMusic(bool state){
-        audioMixer.SetFloat(MusicGroupParam, state ? 0f : -80f);
+        musicSettings.Toggle(state);
+        PlayerPrefs.SetInt(musicSettings.PlayerPrefsEnabledString, state ? 1 : 0);
     }
 
     public void SetSFXValue(float value){
-        audioMixer.SetFloat(SFXParam, Mathf.Log10(value) * 20);
+        sfxSettings.SetValue(value);
+        PlayerPrefs.SetFloat(sfxSettings.PlayerPrefsValueString, value);
     }
 
     public void ToggleSFX(bool state){
-        audioMixer.SetFloat(SFXGroupParam, state ? 0f : -80f);
+        sfxSettings.Toggle(state);
+        PlayerPrefs.SetInt(sfxSettings.PlayerPrefsEnabledString, state ? 1 : 0);
     }
 
 }
