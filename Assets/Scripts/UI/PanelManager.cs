@@ -1,19 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PanelManager : Singleton<PanelManager>{
 
+    [SerializeField] private UnityEvent lastPanelClosed;
+
     private List<Panel> openPanels = new List<Panel>();
     private Dictionary<Panel, Panel> cachedPanels = new Dictionary<Panel, Panel>();
-
-    [SerializeField] private Panel initialPanel;
-    [SerializeField] private Transform parent;
-
-    private void Start(){
-
-        initialPanel = Instantiate(initialPanel, parent);
-
-    }
 
     private void Update(){
 
@@ -23,7 +17,7 @@ public class PanelManager : Singleton<PanelManager>{
 
     }
 
-    public Panel OpenPanel(Panel panel, Transform parent, Panel previousPanel, bool createNew){
+    public Panel OpenPanel(Panel panel, Panel previousPanel = null, bool createNew = false){
 
         Panel newPanel;
 
@@ -31,7 +25,7 @@ public class PanelManager : Singleton<PanelManager>{
 
             if(createNew){
                 Destroy(newPanel.gameObject);
-                cachedPanels[panel] = newPanel = Instantiate(panel, parent);
+                cachedPanels[panel] = newPanel = Instantiate(panel, transform);
             }
             else{
                 newPanel.gameObject.SetActive(true);
@@ -39,7 +33,7 @@ public class PanelManager : Singleton<PanelManager>{
 
         }
         else{
-            cachedPanels[panel] = newPanel = Instantiate(panel, parent);
+            cachedPanels[panel] = newPanel = Instantiate(panel, transform);
         }
 
         newPanel.SetPreviousPanel(previousPanel);
@@ -49,30 +43,30 @@ public class PanelManager : Singleton<PanelManager>{
 
     }
 
+    public void OpenPanel(Panel panel){
+        OpenPanel(panel, null, false);
+    }
+
     public void CloseLast(){
 
         if(openPanels.Count > 0){
 
             Panel panel = openPanels[^1];
 
-            if(panel.Close()){
-
-                openPanels.RemoveAt(openPanels.Count - 1);
-
-            }
+            panel.Close();
+            openPanels.RemoveAt(openPanels.Count - 1);
 
         }
         else{
-            initialPanel.Close();
+            lastPanelClosed.Invoke();
         }
 
     }
 
     public void ClosePanel(Panel panel){
 
-        if(panel.Close()){
-            openPanels.Remove(panel);
-        }
+        panel.Close();
+        openPanels.Remove(panel);
 
     }
 

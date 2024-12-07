@@ -7,7 +7,7 @@ public class AudioInitializer : MonoBehaviour{
     private void Start(){
 
         foreach(var s in audioSettings){
-            s.LoadFromPlayerPrefs();
+            s.InitializeAudio();
         }
 
     }

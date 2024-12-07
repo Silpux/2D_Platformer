@@ -10,14 +10,10 @@ public class AudioMixerSettingsSO : ScriptableObject{
     [SerializeField] private string parameterName;
     public string ParameterName => parameterName;
 
-    [SerializeField] private string playerPrefsValueString;
-    public string PlayerPrefsValueString => playerPrefsValueString;
-
-    [SerializeField] private string playerPrefsEnabledString;
-    public string PlayerPrefsEnabledString => playerPrefsEnabledString;
-
     private bool enabled;
+    public bool Enabled => enabled;
     private float volume;
+    public float Volume => volume;
 
     public void SetValue(float value){
 
@@ -26,8 +22,6 @@ public class AudioMixerSettingsSO : ScriptableObject{
         }
 
         volume = value;
-
-        PlayerPrefs.SetFloat(PlayerPrefsValueString, value);
 
     }
 
@@ -42,14 +36,9 @@ public class AudioMixerSettingsSO : ScriptableObject{
 
         enabled = state;
 
-        PlayerPrefs.SetInt(PlayerPrefsEnabledString, state ? 1 : 0);
-
     }
 
-    public void LoadFromPlayerPrefs(){
-        
-        enabled = 0 != PlayerPrefs.GetInt(PlayerPrefsEnabledString);
-        volume = PlayerPrefs.GetFloat(PlayerPrefsValueString);
+    public void InitializeAudio(){
 
         Toggle(enabled);
         SetValue(volume);

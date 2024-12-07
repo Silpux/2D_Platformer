@@ -26,9 +26,8 @@ public class MainPanel : Panel{
         throw new InvalidOperationException("Main panel cannot have previous panel");
     }
 
-    public override bool Close(){
+    public override void Close(){
         OpenExitPanel();
-        return true;
     }
 
 }

@@ -16,32 +16,28 @@ public class SettingsPanel : Panel{
 
     private void Start(){
 
-        musicToggle.isOn = 0 != PlayerPrefs.GetInt(musicSettings.PlayerPrefsEnabledString);
-        sfxToggle.isOn = 0 != PlayerPrefs.GetInt(sfxSettings.PlayerPrefsEnabledString);
+        musicToggle.isOn = musicSettings.Enabled;
+        sfxToggle.isOn = sfxSettings.Enabled;
 
-        musicSlider.value = PlayerPrefs.GetFloat(musicSettings.PlayerPrefsValueString);
-        sfxSlider.value = PlayerPrefs.GetFloat(sfxSettings.PlayerPrefsValueString);
+        musicSlider.value = musicSettings.Volume;
+        sfxSlider.value = sfxSettings.Volume;
 
     }
 
     public void SetMusicValue(float value){
         musicSettings.SetValue(value);
-        PlayerPrefs.SetFloat(musicSettings.PlayerPrefsValueString, value);
     }
 
     public void ToggleMusic(bool state){
         musicSettings.Toggle(state);
-        PlayerPrefs.SetInt(musicSettings.PlayerPrefsEnabledString, state ? 1 : 0);
     }
 
     public void SetSFXValue(float value){
         sfxSettings.SetValue(value);
-        PlayerPrefs.SetFloat(sfxSettings.PlayerPrefsValueString, value);
     }
 
     public void ToggleSFX(bool state){
         sfxSettings.Toggle(state);
-        PlayerPrefs.SetInt(sfxSettings.PlayerPrefsEnabledString, state ? 1 : 0);
     }
 
 }

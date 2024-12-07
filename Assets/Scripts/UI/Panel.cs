@@ -9,18 +9,17 @@ public abstract class Panel : MonoBehaviour{
     }
 
     public void OpenPanel(Panel prefab, Panel previousPanel = null, bool createNew = false){
-        PanelManager.Instance.OpenPanel(prefab, transform.parent, previousPanel, createNew);
+        PanelManager.Instance.OpenPanel(prefab, previousPanel, createNew);
     }
 
     public virtual void ButtonClose(){
         PanelManager.Instance.ClosePanel(this);
     }
 
-    public virtual bool Close(){
+    public virtual void Close(){
 
         gameObject.SetActive(false);
         PreviousPanel.gameObject.SetActive(true);
-        return true;
 
     }
 
