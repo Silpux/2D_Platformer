@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: d48f9b41672db0246a444f5d3ada9108, type: 2}
   parameterName: SFXVolume
+  playerPrefsToggleString: SFXEnabled
   playerPrefsValueString: SFXVolume
-  playerPrefsEnabledString: SFXEnabled
