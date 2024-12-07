@@ -14,6 +14,24 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-5153941021693216560
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 2fae7fdf3d863144487bff5a3544f48f
+  m_EffectName: Lowpass
+  m_MixLevel: 821a341e84133b346b9d260a6f87cc87
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: c11e360b998502a4ba467be57175ae5b
+  - m_ParameterName: Resonance
+    m_GUID: d93a53bad402da04fa1418cfbac41c98
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!245 &-4610655814863733216
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
@@ -30,7 +48,9 @@ AudioMixerSnapshotController:
     2f365825b081ccf459bd164054f4d46c: 0
     f1aa2626ef26e754db6ef33025b674df: 0
     dbfa4e37411f7bc4fbe285644b34f353: 735
+    d93a53bad402da04fa1418cfbac41c98: 1
     a654f0da90f6b32419a15f5230b7a2da: 300
+    c11e360b998502a4ba467be57175ae5b: 500
     3cb9343b9a961f248b0acd1443583393: 0
     646fef2c30e139c44aad39bf1c912972: 300
     5f4fa23cb92e5094bb7dfaa2e6ce366b: 300
@@ -51,6 +71,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -7709417242014706522}
+  - {fileID: -5153941021693216560}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -70,7 +91,7 @@ AudioMixerController:
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ExposedParameters:
   - guid: 65612be429568594485fdfd42f9959d1
     name: MusicVolume
@@ -83,7 +104,7 @@ AudioMixerController:
     - e2cacae7fd373ed4e97d4316438b1f32
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -4610655814863733216}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -135,7 +156,9 @@ AudioMixerSnapshotController:
     2f365825b081ccf459bd164054f4d46c: 0
     f1aa2626ef26e754db6ef33025b674df: 0
     dbfa4e37411f7bc4fbe285644b34f353: 735
+    d93a53bad402da04fa1418cfbac41c98: 1
     a654f0da90f6b32419a15f5230b7a2da: 22000
+    c11e360b998502a4ba467be57175ae5b: 22000
     3cb9343b9a961f248b0acd1443583393: 0
     646fef2c30e139c44aad39bf1c912972: 300
     8d46b2cc4fe12564c9f4c01310b1a1ca: 22000
