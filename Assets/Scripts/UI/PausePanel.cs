@@ -5,7 +5,21 @@ using UnityEngine.SceneManagement;
 public class PausePanel : Panel{
 
     [SerializeField] private Panel settingsPanelPrefab;
+    [SerializeField] private GameObject darkBackgroundPrefab;
+    private GameObject darkBackground;
     public UnityEvent close;
+
+    private void OnEnable(){
+
+        if(darkBackground == null){
+            darkBackground = Instantiate(darkBackgroundPrefab, transform.parent);
+            darkBackground.transform.SetSiblingIndex(transform.GetSiblingIndex());
+        }
+        else{
+            darkBackground.gameObject.SetActive(true);
+        }
+
+    }
 
     public void OpenSettingsPanel(){
         OpenPanel(settingsPanelPrefab, this);
@@ -14,6 +28,7 @@ public class PausePanel : Panel{
 
     public override void Close(){
 
+        darkBackground.gameObject.SetActive(false);
         gameObject.SetActive(false);
         close.Invoke();
 

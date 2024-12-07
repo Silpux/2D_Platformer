@@ -539,6 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanelPrefab: {fileID: 990689629930958271, guid: 79ee1169e85e3764789ed2a6fbf39253, type: 3}
+  darkBackgroundPrefab: {fileID: 8375397532998437825, guid: 5f9dfcc623f590344ab9d1152605b6af, type: 3}
   close:
     m_PersistentCalls:
       m_Calls:
