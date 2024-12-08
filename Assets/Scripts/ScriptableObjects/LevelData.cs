@@ -22,6 +22,8 @@ public class LevelInfo{
     public SceneAsset Scene => scene;
 
     #endif
+    [SerializeField] private LevelThemeSO levelTheme;
+    public LevelThemeSO LevelTheme => levelTheme;
 
     [HideInInspector]
     public string scenePath;

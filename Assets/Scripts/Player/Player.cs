@@ -33,6 +33,7 @@ public class Player : MonoBehaviour{
     private BulletShooter bulletShooter;
     private BulletStorage bulletStorage;
     private BulletsUI bulletsUI;
+    private AudioSource audioSource;
 
     private enum MoveMode{
 
@@ -52,23 +53,28 @@ public class Player : MonoBehaviour{
         bulletShooter = GetComponent<BulletShooter>();
         bulletStorage = GetComponent<BulletStorage>();
         bulletsUI = GetComponent<BulletsUI>();
+        audioSource = GetComponent<AudioSource>();
 
-        if(groundedZone is null){
+        if(groundedZone == null){
             throw new NullReferenceException("Grounded zone is null");
         }
 
         groundedZone.OnGroundStateChanged += SetGrounded;
 
-        if(bulletShooter is null){
+        if(bulletShooter == null){
             throw new NullReferenceException("Bullet shooter is null");
         }
 
-        if(bulletStorage is null){
+        if(bulletStorage == null){
             throw new NullReferenceException("Bullet storage is null");
         }
         
-        if(bulletsUI is null){
+        if(bulletsUI == null){
             throw new NullReferenceException("BulletsUI is null");
+        }
+
+        if(audioSource == null){
+            throw new NullReferenceException("Audio source is null");
         }
 
         bulletStorage.OnBulletCountChanged += bulletsUI.UpdateBulletsCount;
