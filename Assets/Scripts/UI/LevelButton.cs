@@ -24,4 +24,10 @@ public class LevelButton : MonoBehaviour{
 
     }
 
+    public void SetLevelTheme(LevelThemeSO levelTheme){
+
+        button.onClick.AddListener(() => levelTheme.ApplyTheme());
+
+    }
+
 }

@@ -15,10 +15,13 @@ MonoBehaviour:
   levels:
   - name: Level 1
     scene: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+    levelTheme: {fileID: 11400000, guid: 3349099fa86db754f95c97468c38fabb, type: 2}
     scenePath: Level1
   - name: Level 2
     scene: {fileID: 102900000, guid: 6a8cd294fc510f742abe3f0164102d97, type: 3}
+    levelTheme: {fileID: 11400000, guid: d674bc21d733d2b429e58a691620d822, type: 2}
     scenePath: Level2
   - name: Level 3
     scene: {fileID: 102900000, guid: 2b3b3317133dfe34d853b40e788b1974, type: 3}
+    levelTheme: {fileID: 11400000, guid: 6992b5c411a4bfb429adb2ce2bc5ed35, type: 2}
     scenePath: Level3

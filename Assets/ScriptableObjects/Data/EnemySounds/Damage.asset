@@ -10,9 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0198c7c69e0ec874e8b1ef8d17152648, type: 3}
-  m_Name: PlayerSnowFootstep
+  m_Name: Damage
   m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 8300000, guid: 0800a2c222939ea41b990ab90f39b476, type: 3}
-  - {fileID: 8300000, guid: e6ec60bbeadcd2d4eadf0049ea54a7f5, type: 3}
-  - {fileID: 8300000, guid: dc72dd39031834744ad25b06e8a3c082, type: 3}
+  audioClips: []

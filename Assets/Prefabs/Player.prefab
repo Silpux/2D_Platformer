@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3143788211277564330}
   - component: {fileID: 2431324121386548248}
   - component: {fileID: -13562453697919190}
+  - component: {fileID: 41269922668086707}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -185,6 +186,7 @@ MonoBehaviour:
   jumpForce: 8
   speedOnLadder: 4
   additionalGravity: 2400
+  footstepSoundReference: {fileID: 11400000, guid: 73e5cdf1d6bed8a4b9df55e8a6179f30, type: 2}
   shootPointRight: {fileID: 5225130988246132518}
   shootPointLeft: {fileID: 7546558031432035547}
 --- !u!95 &6815581920902076227
@@ -223,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1138750126712882553, guid: b5e4e8c8cb2180d428dd04e0c653262f, type: 3}
   bulletSpeed: 20
+  shootSounds: {fileID: 11400000, guid: 2f6ed602ee48acc448dbe76449de5e97, type: 2}
 --- !u!114 &3143788211277564330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +349,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &41269922668086707
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430922486445623441}
+  m_Enabled: 1
 --- !u!1 &1372411299253452275
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +520,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7243953598412007926}
   - component: {fileID: 8688946037429552943}
-  - component: {fileID: 5211571405176546673}
   - component: {fileID: 7301975129126195083}
   m_Layer: 0
   m_Name: Main Camera
@@ -584,14 +594,6 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5211571405176546673
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7331578080917433515}
-  m_Enabled: 1
 --- !u!114 &7301975129126195083
 MonoBehaviour:
   m_ObjectHideFlags: 0

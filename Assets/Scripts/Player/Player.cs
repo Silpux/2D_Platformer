@@ -13,6 +13,7 @@ public class Player : MonoBehaviour{
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float speedOnLadder = 4f;
     [SerializeField] private float additionalGravity = 2400f;
+    [SerializeField] private SoundArrayReferenceSO footstepSoundReference;
 
     [SerializeField] private Transform shootPointRight;
     [SerializeField] private Transform shootPointLeft;
@@ -71,10 +72,6 @@ public class Player : MonoBehaviour{
         
         if(bulletsUI == null){
             throw new NullReferenceException("BulletsUI is null");
-        }
-
-        if(audioSource == null){
-            throw new NullReferenceException("Audio source is null");
         }
 
         bulletStorage.OnBulletCountChanged += bulletsUI.UpdateBulletsCount;
@@ -137,6 +134,14 @@ public class Player : MonoBehaviour{
                 bulletShooter.Shoot(shootPointRight.position, new Vector2(1f, 0.1f));
             }
 
+        }
+
+    }
+
+    public void PlayFootstepSound(){
+
+        if(moveMode == MoveMode.Walk && isGrounded){
+            audioSource.PlayOneShot(footstepSoundReference.SoundArray.AudioClips[UnityEngine.Random.Range(0, footstepSoundReference.SoundArray.AudioClips.Length)]);
         }
 
     }

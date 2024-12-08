@@ -47,10 +47,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -3505302893162744639, guid: d48f9b41672db0246a444f5d3ada9108, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSnapshot: {fileID: 24500006, guid: d48f9b41672db0246a444f5d3ada9108, type: 2}
   pausedSnapshot: {fileID: -4610655814863733216, guid: d48f9b41672db0246a444f5d3ada9108, type: 2}
+  musicReference: {fileID: 11400000, guid: 168cf9d15ab9de64e8c3f741a235e32f, type: 2}
 --- !u!114 &6396860736778485827
 MonoBehaviour:
   m_ObjectHideFlags: 0

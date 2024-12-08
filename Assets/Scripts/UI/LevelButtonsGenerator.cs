@@ -18,6 +18,7 @@ public class LevelButtonsGenerator : MonoBehaviour{
 
                 levelButton.SetLevelName(level.Name);
                 levelButton.SetOpenScene(level.scenePath);
+                levelButton.SetLevelTheme(level.LevelTheme);
 
             }
             else{
