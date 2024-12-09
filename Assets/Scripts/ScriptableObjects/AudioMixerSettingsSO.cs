@@ -49,8 +49,8 @@ public class AudioMixerSettingsSO : ScriptableObject{
 
     public void InitializeAudio(){
 
-        enabled = 0 != PlayerPrefs.GetInt(playerPrefsToggleString);
-        volume = PlayerPrefs.GetFloat(playerPrefsValueString);
+        enabled = 0 != PlayerPrefs.GetInt(playerPrefsToggleString, 1);
+        volume = PlayerPrefs.GetFloat(playerPrefsValueString, 0.8f);
 
         Toggle(enabled);
         SetValue(volume);
