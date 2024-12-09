@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "LevelData", menuName = "Game/Level Data")]
+[CreateAssetMenu(fileName = "LevelData", menuName = "Scriptable Objects/Level Data")]
 public class LevelData : ScriptableObject{
 
     public List<LevelInfo> levels;

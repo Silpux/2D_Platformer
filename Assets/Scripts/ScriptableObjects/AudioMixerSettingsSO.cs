@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-[CreateAssetMenu(fileName = "AudioMixerSettingsSO", menuName = "Scriptable Objects/AudioMixerSettingsSO")]
+[CreateAssetMenu(fileName = "AudioMixerSettingsSO", menuName = "Scriptable Objects/AudioMixerSettings")]
 public class AudioMixerSettingsSO : ScriptableObject{
 
     [SerializeField] private AudioMixer audioMixer;
