@@ -80405,14 +80405,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3089162124934608188, guid: 7f5dae5a97934b44c8d22b15be45a661, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 97f0fe0386628b74fb736edd9e281757, type: 3}
-    - target: {fileID: 3089162124934608188, guid: 7f5dae5a97934b44c8d22b15be45a661, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 97f0fe0386628b74fb736edd9e281757, type: 3}
     - target: {fileID: 3251937321651438521, guid: 7f5dae5a97934b44c8d22b15be45a661, type: 3}
       propertyPath: m_Name
       value: BackgroundMusic

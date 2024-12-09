@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0198c7c69e0ec874e8b1ef8d17152648, type: 3}
   m_Name: BlueEnemyGrassFootstep
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: b2ca4c61d487e3a44bcbed419acb39d2, type: 3}
+  - {fileID: 8300000, guid: f656ee407157ed743a2fe1ec46e3be1a, type: 3}
+  - {fileID: 8300000, guid: 3a4982dde0c224e499dc25197b49a3ee, type: 3}

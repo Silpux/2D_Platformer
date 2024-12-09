@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0198c7c69e0ec874e8b1ef8d17152648, type: 3}
   m_Name: RedEnemyDirtFootstep
   m_EditorClassIdentifier: 
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: c7e2f7da2e932124f8f3ee3ce1910670, type: 3}
+  - {fileID: 8300000, guid: 06925bda7fe855a4abb75b64ea869efb, type: 3}
+  - {fileID: 8300000, guid: 7335049432f70c546a8c6c058b5feff8, type: 3}

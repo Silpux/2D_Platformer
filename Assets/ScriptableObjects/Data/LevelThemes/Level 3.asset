@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level 3
   m_EditorClassIdentifier: 
   levelThemeReference: {fileID: 11400000, guid: e6a61dfa5b958c3408fe9b565da74af4, type: 2}
-  backgroundMusic: {fileID: 0}
-  playerFootstepSound: {fileID: 0}
-  blueEnemyFootstepSound: {fileID: 0}
-  redEnemyFootstepSound: {fileID: 0}
-  batEnemyFlySound: {fileID: 0}
+  backgroundMusic: {fileID: 11400000, guid: ef28743555a4692408ef55dcad1d622e, type: 2}
+  playerFootstepSound: {fileID: 11400000, guid: 13fec4d35e749d34ebfc0a719a1ebaa3, type: 2}
+  blueEnemyFootstepSound: {fileID: 11400000, guid: 5497daa2aa9fbe64a92c31c972c9b9bd, type: 2}
+  redEnemyFootstepSound: {fileID: 11400000, guid: 343be2d54b4967a43866f5efd4d833c0, type: 2}
+  batEnemyFlySound: {fileID: 11400000, guid: 6739449fdfd62dd4a944902ab3801236, type: 2}
