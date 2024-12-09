@@ -1,10 +1,25 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public abstract class EnemyDamagable : Enemy, IDamagable{
+public abstract class EnemyDamagable : Enemy, IDamagable, IHealthBar{
 
-    [SerializeField] protected int health;
+    private int health;
+    protected int Health{
+
+        get => health;
+
+        set{
+            health = value;
+            OnHealthChanged?.Invoke(this, new IHealthBar.HealthChangedEventArgs((float)health / maxHealth));
+        }
+
+    }
+
+    [SerializeField] int maxHealth;
     [SerializeField] protected SoundArraySO damageSound;
+
+    public event EventHandler<IHealthBar.HealthChangedEventArgs> OnHealthChanged;
 
     protected Animator animator;
     protected AudioSource audioSource;
@@ -12,6 +27,7 @@ public abstract class EnemyDamagable : Enemy, IDamagable{
 
     protected override void Start(){
 
+        Health = maxHealth;
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         takeDamageAnimationHash = Animator.StringToHash("EnemyTakeDamage");
@@ -20,15 +36,15 @@ public abstract class EnemyDamagable : Enemy, IDamagable{
 
     public void TakeDamage(int amount){
 
-        health -= amount;
+        Health -= amount;
 
-        if(health <= 0){
+        if(Health <= 0){
             Die();
             return;
         }
 
         animator.Play(takeDamageAnimationHash, 1, 0f);
-        audioSource.PlayOneShot(damageSound.AudioClips[Random.Range(0, damageSound.AudioClips.Length)]);
+        audioSource.PlayOneShot(damageSound.AudioClips[UnityEngine.Random.Range(0, damageSound.AudioClips.Length)]);
 
     }
 
