@@ -55671,6 +55671,10 @@ PrefabInstance:
       propertyPath: walkTargets.Array.data[1].y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3170745842479408637, guid: cc507dee2ac53db4aa067b58cf7e2dd9, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3313750328603482755, guid: cc507dee2ac53db4aa067b58cf7e2dd9, type: 3}
       propertyPath: m_Name
       value: EnemyRed (1)

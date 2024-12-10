@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public abstract class EnemyDamagable : Enemy, IDamagable, IHealthBar{
 
     private int health;
@@ -20,17 +19,14 @@ public abstract class EnemyDamagable : Enemy, IDamagable, IHealthBar{
     [SerializeField] protected SoundArraySO damageSound;
 
     public event EventHandler<IHealthBar.HealthChangedEventArgs> OnHealthChanged;
+    public event Action OnTakeDamage;
 
-    protected Animator animator;
     protected AudioSource audioSource;
-    protected int takeDamageAnimationHash;
 
     protected override void Start(){
 
         Health = maxHealth;
-        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        takeDamageAnimationHash = Animator.StringToHash("EnemyTakeDamage");
 
     }
 
@@ -43,7 +39,7 @@ public abstract class EnemyDamagable : Enemy, IDamagable, IHealthBar{
             return;
         }
 
-        animator.Play(takeDamageAnimationHash, 1, 0f);
+        OnTakeDamage?.Invoke();
         audioSource.PlayOneShot(damageSound.AudioClips[UnityEngine.Random.Range(0, damageSound.AudioClips.Length)]);
 
     }

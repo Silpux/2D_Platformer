@@ -62556,6 +62556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1555493448}
     m_Modifications:
+    - target: {fileID: 1584407734462659079, guid: bbd580ad647e32746a4b8a6e23ead1fb, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2976520045720200657, guid: bbd580ad647e32746a4b8a6e23ead1fb, type: 3}
       propertyPath: m_FlipX
       value: 0

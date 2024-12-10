@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour{
@@ -6,6 +6,8 @@ public abstract class Enemy : MonoBehaviour{
     [SerializeField] protected Vector3[] moveTargets;
 
     [SerializeField] protected float speed;
+
+    public event Action OnTargetReached;
 
     protected int currentTargetIndex = 0;
 
@@ -15,8 +17,7 @@ public abstract class Enemy : MonoBehaviour{
 
         if(transform.position == moveTargets[currentTargetIndex]){
 
-            TargetReached();
-
+            OnTargetReached?.Invoke();
             currentTargetIndex = (currentTargetIndex + 1) % moveTargets.Length;
 
         }
@@ -24,8 +25,6 @@ public abstract class Enemy : MonoBehaviour{
         transform.position = Vector3.MoveTowards(transform.position, moveTargets[currentTargetIndex], speed);
 
     }
-
-    protected abstract void TargetReached();
 
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.TryGetComponent<Player>(out Player player)){
