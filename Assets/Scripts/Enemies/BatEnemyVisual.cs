@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class EnemyBatVisual : MonoBehaviour{
+public class BatEnemyVisual : MonoBehaviour{
 
-    [SerializeField] private EnemyBat enemyBat;
+    [SerializeField] private BatEnemy enemyBat;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
