@@ -1,7 +1,11 @@
 using System;
+using Mono.Cecil.Cil;
 using UnityEngine;
 
 public class Player : MonoBehaviour{
+
+    public event Action<bool> OnDirectionChanged;
+    public event Action<WalkSpeed> OnSpeedChanged;
 
     [SerializeField] private float walkSpeed = 0.1f;
     [SerializeField] private float swimSpeed = 0.05f;
@@ -24,11 +28,9 @@ public class Player : MonoBehaviour{
 
     private Vector3 spawnPosition;
 
-    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb2d;
     private MoveMode moveMode;
 
-    private Animator animator;
 
     private GroundedZone groundedZone;
     private BulletShooter bulletShooter;
@@ -44,13 +46,20 @@ public class Player : MonoBehaviour{
 
     }
 
+    public enum WalkSpeed{
+
+        Idle,
+        Sneak,
+        Walk,
+        Run
+
+    }
+
     private void Awake(){
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         spawnPosition = transform.position;
         groundedZone = GetComponentInChildren<GroundedZone>();
-        animator = GetComponent<Animator>();
         bulletShooter = GetComponent<BulletShooter>();
         bulletStorage = GetComponent<BulletStorage>();
         bulletsUI = GetComponent<BulletsUI>();
@@ -80,16 +89,23 @@ public class Player : MonoBehaviour{
 
     private void Update(){
 
-        if(Input.GetAxis("Horizontal") != 0){
-            spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
-            animator.Play(Input.GetKey(KeyCode.LeftShift) ? "Sneak" : "Walk");
+        if(Input.GetAxis("Horizontal") is not 0 and float val){
+
+            OnDirectionChanged?.Invoke(val > 0);
+
+            if(Input.GetKey(KeyCode.LeftShift)){
+                OnSpeedChanged?.Invoke(WalkSpeed.Sneak);
+            }
+            else if(Input.GetKey(KeyCode.LeftControl)){
+                OnSpeedChanged?.Invoke(WalkSpeed.Run);
+            }
+            else{
+                OnSpeedChanged?.Invoke(WalkSpeed.Walk);
+            }
+
         }
         else{
-            animator.Play("Idle");
-        }
-
-        if(rb2d.linearVelocity.y < 0 && moveMode == MoveMode.Walk){
-            rb2d.AddForce(-transform.up * additionalGravity * Time.deltaTime);
+            OnSpeedChanged?.Invoke(WalkSpeed.Idle);
         }
 
         switch(moveMode){
@@ -115,6 +131,10 @@ public class Player : MonoBehaviour{
 
                 return;
 
+        }
+
+        if(rb2d.linearVelocity.y < 0){
+            rb2d.AddForce(-transform.up * additionalGravity * Time.deltaTime);
         }
 
         if(Input.GetKey(KeyCode.Space) && isGrounded){
