@@ -6,6 +6,7 @@ public class PausePanel : Panel{
 
     [SerializeField] private Panel settingsPanelPrefab;
     [SerializeField] private GameObject darkBackgroundPrefab;
+
     private GameObject darkBackground;
     public UnityEvent close;
 

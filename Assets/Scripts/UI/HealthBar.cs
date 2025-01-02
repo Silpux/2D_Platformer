@@ -6,6 +6,7 @@ public class HealthBar : MonoBehaviour{
 
     [SerializeField] private GameObject healthBarGameObject;
     [SerializeField] private Image fill;
+
     private IHealthBar healthBar;
 
     private void Awake(){

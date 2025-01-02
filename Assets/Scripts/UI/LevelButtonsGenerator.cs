@@ -22,9 +22,7 @@ public class LevelButtonsGenerator : MonoBehaviour{
 
             }
             else{
-
                 throw new NullReferenceException("LevelButton component is null"); 
-
             }
 
         }

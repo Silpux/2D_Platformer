@@ -11,10 +11,8 @@ public class SpriteToggle : MonoBehaviour{
     private bool state;
 
     private void Start(){
-
         state = GetComponent<Toggle>().isOn;
         UpdateSprite();
-
     }
 
     public void SetState(bool state){
